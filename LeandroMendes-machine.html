@@ -11,7 +11,7 @@
 </head>
 <style>
     body {
-        background-image: linear-gradient(To top,#1c1c23 ,#0f0f0f );
+        background-image: linear-gradient(To top, #152331, #000000);
         background-attachment: fixed;
         color: white;
         font-family: Arial, Helvetica, sans-serif;
@@ -20,8 +20,9 @@
     button {
         border-style: solid;
         border-color: white;
-        background-color: #0f0f0f;
-        color: white
+        background-image: linear-gradient(To top, #8E2DE2, #4A00E0);
+        color: white;
+        border-radius: 25px;
     }
 
     input {
@@ -31,6 +32,7 @@
         color: white;
         border-radius: 5px;
     }
+
     #demo2 {
         display: none;
         border-style: solid;
@@ -38,14 +40,18 @@
         width: 250px;
         border-radius: 5px;
     }
-    #table{
-        border : 2px solid white;
+
+    #table {
+        border: 2px solid white;
         display: none;
-        width: 500px;
+        width: 752px;
         border-radius: 5px;
         text-align: center;
     }
-    table, th, td {
+
+    table,
+    th,
+    td {
         border: 1px solid white;
         border-collapse: collapse;
         width: 500px;
@@ -58,27 +64,30 @@
         <b>Digite um número decimal</b><br>
         <input id="demo1" type="number" placeholder="Ex: 42">
         <br><br>
-        <button onclick="converter()">Converter</button>
-        <button onclick="tabela()" id="button_table">Tabela</button><p>
+        <button onclick="converter()"><b>Converter</b></button>
+        <button onclick="tabela()" id="button_table"><b>Tabela</b></button>
+        <p>
         <div id="table">
             <table>
-                <tr><b>NÚMEROS ELEVADO A 2²</b></tr>
+                <tr><b>Tabela elevação do número 2</b></tr>
                 <tr>
-                    <th>0²</th>
-                    <th>1²</th>
-                    <th>4²</th>
-                    <th>5²</th>
-                    <th>6²</th>
-                    <th>7²</th>
-                    <th>8²</th>
-                    <th>9²</th>
-                    <th>10²</th>
-                    <th>11²</th>
-                    <th>12²</th>
-                    <th>13²</th>
-                    <th>14²</th>
-                    <th>15²</th>
-                    <th>16²</th>
+                    <th>2^(0)</th>
+                    <th>2^(1)</th>
+                    <th>2^(2)</th>
+                    <th>2^(3)</th>
+                    <th>2^(4)</th>
+                    <th>2^(5)</th>
+                    <th>2^(6)</th>
+                    <th>2^(7)</th>
+                    <th>2^(8)</th>
+                    <th>2^(9)</th>
+                    <th>2^(10)</th>
+                    <th>2^(11)</th>
+                    <th>2^(12)</th>
+                    <th>2^(13)</th>
+                    <th>2^(14)</th>
+                    <th>2^(15)</th>
+                    <th>2^(16)</th>
                 </tr>
                 <tr>
                     <td>1</td>
@@ -96,20 +105,24 @@
                     <td>4096</td>
                     <td>8192</td>
                     <td>16384</td>
+                    <td>32768</td>
+                    <td>65536</td>
                 </tr>
             </table>
-        </div> <p>
-        </center>
-        <div id="demo2"></div> <p></p>  
+        </div>
+        <p>
+    </center>
+    <div id="demo2"></div>
+    <p></p>
     <script>
         let valor = 0
         function converter() {
             var decimal = Number(demo1.value);
             if (decimal == ``) {
-                alert (`Informe um valor!`)
+                alert(`Informe um valor!`)
             }
             else if (decimal == valor) {
-                alert (`Informe outro valor!`)
+                alert(`Informe outro valor!`)
             }
             else {
                 document.getElementById(`demo2`).style.display = `block`;
@@ -119,11 +132,15 @@
                 <span style = "color: red";>${decimal}</center></span></b><br>
                 • Octal: <span style = "color: yellow";>${decimal.toString(8)}</span> <br>
                 • Hexadecimal: <span style = "color: yellow";>${decimal.toString(16)}</span> <br>
-                • Binário: <span style = "color: yellow";>${decimal.toString(2)}</span><br><br>`
+                • Binário: <span style = "color: yellow";>${decimal.toString(2)}</span>`
             }
         }
         function tabela() {
-            document.getElementById(`table`).style.display = `block`
+            if (document.getElementById(`table`).style.display == `block`) {
+                document.getElementById(`table`).style.display = `none`
+            } else {
+                document.getElementById(`table`).style.display = `block`
+            }
         }
     </script>
 </body>
