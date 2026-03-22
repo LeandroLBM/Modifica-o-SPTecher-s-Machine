@@ -1,0 +1,144 @@
+<!-- Criado por Marise Miranda | 2017.1 -->
+<!-- Adaptado por Matheus Matos | 2025.1 -->
+<!-- Última adaptação por Leandro ADS1 | 2026.3 -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPTecher's Machine</title>
+</head>
+<style>
+    body {
+        background-image: linear-gradient(To top,#1c1c23 ,#0f0f0f );
+        background-attachment: fixed;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    button {
+        border-style: solid;
+        border-color: white;
+        background-color: #0f0f0f;
+        color: white
+    }
+
+    input {
+        border-style: solid;
+        border-color: white;
+        background-color: #0f0f0f;
+        color: white;
+        border-radius: 5px;
+    }
+    #demo2 {
+        display: none;
+        border-style: solid;
+        border-color: white;
+        width: 250px;
+        border-radius: 5px;
+    }
+    #table{
+        border : 2px solid white;
+        display: none;
+        width: 500px;
+        border-radius: 5px;
+        text-align: center;
+    }
+    table, th, td {
+        border: 1px solid white;
+        border-collapse: collapse;
+        width: 500px;
+    }
+</style>
+
+<body>
+    <center>
+        <h1>SPTecher's Machine</h1>
+        <b>Digite um número decimal</b><br>
+        <input id="demo1" type="number" placeholder="Ex: 42">
+        <br><br>
+        <button onclick="converter()">Converter</button>
+        <button onclick="tabela()" id="button_table">Tabela</button><p>
+        <div id="table">
+            <table>
+                <tr><b>NÚMEROS ELEVADO A 2²</b></tr>
+                <tr>
+                    <th>0²</th>
+                    <th>1²</th>
+                    <th>4²</th>
+                    <th>5²</th>
+                    <th>6²</th>
+                    <th>7²</th>
+                    <th>8²</th>
+                    <th>9²</th>
+                    <th>10²</th>
+                    <th>11²</th>
+                    <th>12²</th>
+                    <th>13²</th>
+                    <th>14²</th>
+                    <th>15²</th>
+                    <th>16²</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>8</td>
+                    <td>16</td>
+                    <td>32</td>
+                    <td>64</td>
+                    <td>128</td>
+                    <td>256</td>
+                    <td>512</td>
+                    <td>1024</td>
+                    <td>2048</td>
+                    <td>4096</td>
+                    <td>8192</td>
+                    <td>16384</td>
+                </tr>
+            </table>
+        </div> <p>
+        </center>
+        <div id="demo2"></div> <p></p>  
+    <script>
+        let valor = 0
+        function converter() {
+            var decimal = Number(demo1.value);
+            if (decimal == ``) {
+                alert (`Informe um valor!`)
+            }
+            else if (decimal == valor) {
+                alert (`Informe outro valor!`)
+            }
+            else {
+                document.getElementById(`demo2`).style.display = `block`;
+                valor = (valor - valor) + decimal
+                demo2.innerHTML += `<center>
+               <b> O Resultados com número
+                <span style = "color: red";>${decimal}</center></span></b><br>
+                • Octal: <span style = "color: yellow";>${decimal.toString(8)}</span> <br>
+                • Hexadecimal: <span style = "color: yellow";>${decimal.toString(16)}</span> <br>
+                • Binário: <span style = "color: yellow";>${decimal.toString(2)}</span><br><br>`
+            }
+        }
+        function tabela() {
+            document.getElementById(`table`).style.display = `block`
+        }
+    </script>
+</body>
+
+</html>
+<!--
+Referências que foram utilizadas para o aprendizado e modificação do arquivo:
+    (Body)
+Backgroud: https://www.w3schools.com/css/css_background.asp
+Gradientes: https://www.w3schools.com/css/css3_gradients.asp
+Fontes: https://www.w3schools.com/css/css_font.asp
+    (style)
+Bordas: https://www.w3schools.com/css/css_border.asp
+width: https://www.w3schools.com/css/css_border_width.asp
+    (Tabela)
+configuração: https://www.w3schools.com/css/css_table.asp
+aliamento: https://www.w3schools.com/css/css_table_align.asp
+-->
